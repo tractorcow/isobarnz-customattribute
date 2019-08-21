@@ -74,7 +74,9 @@ class Custom extends Template
      */
     protected function _toHtml()
     {
+        /** @var CustomWidget $customWidgetBlock */
         $customWidgetBlock = $this->getLayout()->createBlock(CustomWidget::class);
+        $customWidgetBlock->setAddress($this->address);
         return $customWidgetBlock->toHtml();
     }
 }

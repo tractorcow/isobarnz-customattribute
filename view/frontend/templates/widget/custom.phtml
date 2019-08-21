@@ -1,0 +1,23 @@
+<?php
+
+use IsobarNZ\CustomAttribute\Block\Customer\Widget\Custom;
+
+/** @var Custom $block */
+?>
+<div class="field custom<?php echo $block->isRequired() ? ' required' : ''; ?>">
+    <label class="label"
+           for="<?php echo $block->escapeHtml($block->getFieldId()); ?>">
+        <span><?php echo $block->escapeHtml($block->getFieldLabel()); ?></span>
+    </label>
+    <div class="control">
+        <input type="text"
+               id="<?php echo $block->escapeHtml($block->getFieldId()); ?>"
+               name="<?php echo $block->escapeHtml($block->getFieldName()); ?>"
+               value="<?php echo $block->escapeHtml($block->getValue()); ?>"
+               title="<?php echo $block->escapeHtml($block->getFieldLabel()); ?>"
+               class="input-text"
+            <?php echo $block->getFieldParams(); ?>
+            <?php if ($block->isRequired()) echo ' data-validate="{required: true}"'; ?>
+        />
+    </div>
+</div>

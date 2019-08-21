@@ -32,15 +32,5 @@ class AddressEditPlugin
     {
         $customBlock = $this->layout->createBlock(Custom::class, 'isobarnz_customattribute');
         return $result . $customBlock->toHtml();
-
-        /*
-        <<<HTML
-<div class="field custom">
-<label class="label" for="custom"><span>Custom</span></label>
-<div class="control">
-    <input type="text" name="custom" title="Custom" class="input-text" id="custom" >
-</div>
-</div>
-HTML;*/
     }
 }
